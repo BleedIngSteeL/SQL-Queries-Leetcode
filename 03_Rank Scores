@@ -1,0 +1,7 @@
+# In SQL, the DENSE_RANK() function is used to assign a rank to each distinct row within a result set. 
+# Unlike the RANK() function, DENSE_RANK() does not leave gaps in the ranking when there are tied values. 
+# If two or more rows have the same values and receive the same rank, the next rank is incremented by the number of tied rows.
+
+
+select score, dense_rank() over(order by score desc) as "rank" 
+from Scores
